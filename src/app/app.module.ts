@@ -21,6 +21,8 @@ import {UserAuthService} from './services/user-auth.service';
 import {NotificationModule} from './notification/notification.module';
 import {FilmsService} from './services/films.service';
 import {FilmListModule} from './film-list/film-list.module';
+import {FilmModule} from './film/film.module';
+import {FilmDetailComponent} from './film-detail/film-detail.component';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import {FilmListModule} from './film-list/film-list.module';
     AppComponent,
     LoginFormComponent,
     DashboardComponent,
-    RegisterComponent
+    RegisterComponent,
+    FilmDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import {FilmListModule} from './film-list/film-list.module';
     NgReduxRouterModule.forRoot(),
     EpicModule,
     NotificationModule,
-    FilmListModule
+    FilmListModule,
+    FilmModule
   ],
   providers: [UserAuthService, FilmsService],
   bootstrap: [AppComponent]

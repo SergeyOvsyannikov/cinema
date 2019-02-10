@@ -1,1 +1,2 @@
-<app-film [film]="getFilmById(filmId)|async" *ngFor="let filmId of (filmList | async)" ></app-film>
+<app-film [film]="getFilmById(filmId)|async" *ngFor="let filmId of (filmList | async)"
+[routerLink]="'film/'+filmId"></app-film>

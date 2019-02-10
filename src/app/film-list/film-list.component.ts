@@ -7,6 +7,7 @@ import {fetchFilmListAction} from '../store/film/film.action';
 import {filmListSelectorObjectIds} from '../store/film-list/film-list.selector';
 import {Observable} from 'rxjs';
 import {filmsSelectorById} from '../store/film/film.selector';
+import {RouterLink, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-film-list',
@@ -18,7 +19,9 @@ export class FilmListComponent implements OnInit {
   @select(filmListSelectorObjectIds) filmList: Observable<string[]>;
   @HostBinding('class.app-film-list') css = true;
 
-  constructor(private ngRedux: NgRedux<AppState>) {
+  constructor(private ngRedux: NgRedux<AppState>,
+              routerModule: RouterModule,
+              routerLink: RouterLink) {
   }
 
   getFilmById(filmId: string) {

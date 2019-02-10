@@ -12,7 +12,6 @@ export class RegisterComponent implements OnInit {
 
   @HostBinding('class') class = 'register-form';
   reactiveForm: FormGroup;
-  data = {};
 
   isControlInvalid(controlName: string): boolean {
     const control = this.reactiveForm.controls[controlName];
