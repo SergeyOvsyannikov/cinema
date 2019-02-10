@@ -1,0 +1,21 @@
+<div *ngIf=" userId|async; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>{{(currentUser|async).login}}</ng-template>
+<ng-template #elseBlock>
+  <form [formGroup]="reactiveForm" (submit)="onSubmit()" class="reg-form">
+    <div class="form-group">
+      <label for="login">Username:</label>
+      <input type="text" id="login" formControlName="login" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control">
+    </div>
+    <div class="control-panel">
+      <button type="submit" class="btn-default btn">Login</button>
+      <a href="/register">
+        <button type="button" class="btn-default btn">Register</button>
+      </a>
+    </div>
+  </form>
+</ng-template>
+

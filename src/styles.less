@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+.application {
+  position: relative;
+  display: block;
+}
+
+.notification {
+  position: absolute;
+  width: 350px;
+  border: 2px solid #888686;
+  border-radius: 4px;
+  top: 0;
+  background: #fff;
+  right: 0;
+
+  &-caption {
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid;
+  }
+  &-text{
+    padding: 10px;
+  }
+  &._error{
+    border-color: red;
+  }
+  &._warning{
+    border-color: yellowgreen;
+  }
+  &._success{
+    border-color: green;
+  }
+}

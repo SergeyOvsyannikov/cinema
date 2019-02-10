@@ -1,0 +1,8 @@
+<div *ngIf="(notification|async).visible">
+  <div class = "notification" *ngIf="(notification|async) as notModel" [ngClass]="{_error:notModel.type==='error',
+  _success:notModel.type==='success', _warning:notModel.type==='warning'}">
+    <div ngClass="notification-caption">{{notModel.caption}}</div>
+    <div ngClass="notification-text">{{notModel.text}}</div>
+  </div>
+
+</div>
