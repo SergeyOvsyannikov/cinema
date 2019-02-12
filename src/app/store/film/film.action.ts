@@ -26,7 +26,7 @@ export function fetchFilmListActionSuccess(films: FilmModel[]) {
 export type FetchFilmListActionFailureType = AppAction<FilmActionEnum.FETCH_FILM_LIST_FAILURE, ActionType<typeof fetchFilmListFailureAction>>;
 
 export function fetchFilmListFailureAction(error: any) {
-  return errorAction(FilmActionEnum.FETCH_FILM_LIST_FAILURE, error);
+  return errorAction(FilmActionEnum.FETCH_FILM_LIST_FAILURE, {error});
 }
 
 export type FetchFilmByIdActionType = AppAction<FilmActionEnum.FETCH_FILM_BY_ID, ActionType<typeof fetchFilmByIdAction>>;
@@ -35,16 +35,16 @@ export function fetchFilmByIdAction(filmId: string) {
   return {type: FilmActionEnum.FETCH_FILM_BY_ID, payload: {filmId} };
 }
 
-export type FetchFilmByIdSuccesActionType = AppAction<FilmActionEnum.FETCH_FILM_BY_ID_SUCCESS, ActionType<typeof fetchFilmByIdSuccessAction>>
+export type FetchFilmByIdSuccesActionType = AppAction<FilmActionEnum.FETCH_FILM_BY_ID_SUCCESS, ActionType<typeof fetchFilmByIdSuccessAction>>;
 
 export function fetchFilmByIdSuccessAction(film: FilmModel) {
-  return {type: FilmActionEnum.FETCH_FILM_BY_ID_SUCCESS, payload: film};
+  return {type: FilmActionEnum.FETCH_FILM_BY_ID_SUCCESS, payload: {film}};
 }
 
-export type FetchFilmByIdFailureActionType = AppAction<FilmActionEnum.FETCH_FILM_BY_ID_SUCCESS, ActionType<typeof fetchFilmByIdFailureAction>>
+export type FetchFilmByIdFailureActionType = AppAction<FilmActionEnum.FETCH_FILM_BY_ID_FAILURE, ActionType<typeof fetchFilmByIdFailureAction>>;
 
 export function fetchFilmByIdFailureAction(error: any) {
-  return errorAction(FilmActionEnum.FETCH_FILM_BY_ID_FAILURE, error);
+  return errorAction(FilmActionEnum.FETCH_FILM_BY_ID_FAILURE, {error});
 }
 
 export type AllFilmsType =

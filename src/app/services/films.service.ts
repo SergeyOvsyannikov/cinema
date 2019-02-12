@@ -13,7 +13,7 @@ export class FilmsService extends BackendServices {
   }
 
   getFilmById(id: string) {
-    return this.http.get<FilmModel>(this.URL_FILMS + id);
+    return this.http.get<FilmModel>(this.URL_FILMS + '/' + id);
   }
 
   constructor(private http: HttpClient) {

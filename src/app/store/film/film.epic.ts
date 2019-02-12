@@ -17,7 +17,7 @@ export class FilmEpics {
   allEpic = [];
 
   constructor(private filmService: FilmsService) {
-    this.allEpic = [this.getFilmsList$, this.getFilmListById$];
+    this.allEpic = [this.getFilmsList$, this.getFilmById$];
   }
 
   getFilmsList$ = (action$: ActionsObservable<AllFilmsType>) => {
@@ -35,14 +35,15 @@ export class FilmEpics {
     );
   };
 
-  getFilmListById$ = (action$: ActionsObservable<AllFilmsType>) => {
+  getFilmById$ = (action$: ActionsObservable<AllFilmsType>) => {
     return action$.ofType(FilmActionEnum.FETCH_FILM_BY_ID).pipe(
       mergeMap((action: FetchFilmByIdActionType) => {
         const {filmId} = action.payload;
         return this.filmService.getFilmById(filmId).pipe(
           switchMap((film) => of(
-            fetchFilmByIdSuccessAction(film)
-          )),
+                fetchFilmByIdSuccessAction(film)
+              )
+          ),
           catchError((error) => of(
             fetchFilmByIdFailureAction(error)
           ))

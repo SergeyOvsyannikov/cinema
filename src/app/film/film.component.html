@@ -1,8 +1,6 @@
-<div class="film">
-
-    <img [src]=film.imageUrl alt="картинкафильма" class="film__image">
-    <div class="film__text">
-      <div class="film__genre"><span class="film__genre-label">Жанр:</span>&nbsp;{{film.genre}}</div>
-      <div class="film__name">{{film.filmName}}</div>
-    </div>
+<div class="film" [routerLink]="'film/'+film.objectId">
+  <img [src]=film.imageUrl alt="картинкафильма" class="film__image">
+  <div class="film__genre film__text"><span class="film__genre-label">Жанр:</span>&nbsp;{{film.genre}}</div>
+  <div class="film__name film__text">{{film.filmName}}</div>
 </div>
+

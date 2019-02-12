@@ -1,11 +1,14 @@
-.film a {
+/*.film a {
   text-decoration: none;
   color: black;
   font-size: 18px;
-}
+}*/
 
 .film {
-  margin: 20px 40px;
+  display: inline-flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__text {
     width: 160px;
@@ -17,6 +20,8 @@
   }
 
   &__genre {
+    margin-top: 5px;
+    flex: 1 1 auto;
     color: gray;
     font-size: 12px;
   }
@@ -27,6 +32,11 @@
     padding: 2px;
     border-radius: 10%;
   }
+  &:hover{
+    cursor: pointer;
+  }
 }
+
+
 
 

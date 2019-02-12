@@ -1,6 +1,5 @@
 import {Component, HostBinding, Input, OnInit} from '@angular/core';
-import {FilmComponent} from '../film/film.component';
-import {FilmModel} from '../models/film.model';
+
 import {NgRedux, select} from '@angular-redux/store';
 import {AppState} from '../store/app-state';
 import {fetchFilmListAction} from '../store/film/film.action';
@@ -26,7 +25,6 @@ export class FilmListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.filmList.subscribe(console.log);
     this.ngRedux.dispatch(fetchFilmListAction());
   }
 

@@ -12,8 +12,7 @@ export class FilmComponent implements OnInit {
 
   @Input() film: FilmModel;
   @HostBinding('class.app-film') css = true;
-  constructor(router: ActivatedRoute,
-              location: Location) { }
+  constructor() { }
 
   ngOnInit() {
   }

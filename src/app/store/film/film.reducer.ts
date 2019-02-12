@@ -18,6 +18,10 @@ export const filmReducer: Reducer = (state = INITIAL_STATE, action: AllFilmsType
       }
       return newState;
     }
+    case FilmActionEnum.FETCH_FILM_BY_ID_SUCCESS: {
+      const {film} = action.payload;
+      return {...state, [film.objectId]: {...film}};
+    }
   }
   return state;
 
