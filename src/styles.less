@@ -50,3 +50,30 @@ body{
     outline-color: #c6c9d0;
   }
 }
+
+.button-exit{
+  right: 37px;
+  top: 40px;
+  width: 32px;
+  position: absolute;
+  height: 32px;
+  opacity: 0.5;
+  &:before, &:after{
+    content: ' ';
+    width: 2px;
+    height: 20px;
+    background: #c6c9d0;
+    position: absolute;
+    left: 15px;
+  }
+  &:before{
+    transform: rotate(45deg);
+  }
+  &:after{
+    transform: rotate(-45deg);
+  }
+  &:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+}

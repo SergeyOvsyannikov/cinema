@@ -24,6 +24,10 @@ export class LoginFormComponent implements OnInit {
   @select(currentUserSelectorObjectId) userId: Observable<string>;
   @select(currentUserSelector) currentUser: Observable<UserModel>;
   @select(notificationSelectorVisible) notifVisible: Observable<boolean>;
+  constructor(private fb: FormBuilder,
+              private ngRedux: NgRedux<AppState>,
+              private uAuth: UserAuthService) {
+  }
 
   onSubmit() {
     const controls = this.reactiveForm.controls;
@@ -41,13 +45,6 @@ export class LoginFormComponent implements OnInit {
     /** TODO: Обработка данных формы */
     const {login, password} = this.reactiveForm.value;
     this.ngRedux.dispatch(userLoginAction(login, password));
-/*    this.uAuth.logIn(this.reactiveForm.value).subscribe((response) => {
-        this._currentUser = response;
-        console.log('Добро пожаловать, ' + response.name);
-      },
-      (response) => {
-      }
-    );*/
   }
 
   initForm() {
@@ -56,12 +53,9 @@ export class LoginFormComponent implements OnInit {
       password: [null]
     });
   }
-
-  constructor(private fb: FormBuilder,
-              private ngRedux: NgRedux<AppState>,
-              private uAuth: UserAuthService) {
+  toggleFormVisible() {
+    LoginFormVisible.toggleVisible();
   }
-
   ngOnInit() {
     this.initForm();
   }

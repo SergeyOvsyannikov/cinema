@@ -3,13 +3,12 @@
   <form [formGroup]="reactiveForm" (submit)="onSubmit()" class="login-form">
     <header class="login-form__header">
       <h2>Вход</h2>
+      <span class="button-exit" (click)="toggleFormVisible()"></span>
     </header>
     <div class="form-group">
-      <!--<label for="login">Username:</label>-->
       <input type="text" id="login" formControlName="login" class="form-control" placeholder="Логин">
     </div>
     <div class="form-group">
-      <!--<label for="password">Password:</label>-->
       <input type="password" id="password" formControlName="password" class="form-control" placeholder="Пароль">
     </div>
     <div class="control-panel">
