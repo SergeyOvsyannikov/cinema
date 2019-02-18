@@ -9,6 +9,8 @@ import {log} from 'util';
 import {AppState} from '../store/app-state';
 import {currentUserSelector, currentUserSelectorObjectId} from '../store/current-user/current-user.selector';
 import {UserModel} from '../models/users/user.model';
+import {notificationSelectorVisible} from '../store/notification/notification.selector';
+import {LoginFormVisible} from './login-form.visible';
 
 @Component({
   selector: 'app-login-form',
@@ -21,6 +23,7 @@ export class LoginFormComponent implements OnInit {
   reactiveForm: FormGroup;
   @select(currentUserSelectorObjectId) userId: Observable<string>;
   @select(currentUserSelector) currentUser: Observable<UserModel>;
+  @select(notificationSelectorVisible) notifVisible: Observable<boolean>;
 
   onSubmit() {
     const controls = this.reactiveForm.controls;
@@ -46,7 +49,6 @@ export class LoginFormComponent implements OnInit {
       }
     );*/
   }
-
 
   initForm() {
     this.reactiveForm = this.fb.group({

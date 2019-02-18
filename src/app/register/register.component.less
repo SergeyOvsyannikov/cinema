@@ -1,19 +1,25 @@
 :host{
-
   display: flex;
   justify-content: center;
+  padding-bottom: 40px;
 }
 .form-control.ng-touched.ng-invalid{
   border-color: red;
 }
-.form{
+.register-form{
+  background: #ffffff;
   border: solid #000 1px;
   padding: 10px;
-  border-radius: 5%;
-  box-shadow: 5px 4px 3px 2px rgba(0, 0, 0, 0.5);
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
-
+.reg-form{
+  display: flex;
+  flex-wrap: wrap;
+  width: 270px;
+  justify-content: center;
+}
 .form-control{
   display: block;
   margin-top: 3px;
@@ -25,19 +31,22 @@
   justify-content: space-between;
   width: 173px;
 }
+.already-have-acc{
+  margin-top: 10px;
+}
 
 a{
   text-decoration: none;
 }
 .btn{
   text-align: center;
-  background: #FFD700;
-  border: solid black 1px;
-  width: 70px;
-  height: 20px;
+  background: #007cc1;
+  width: 270px;
+  height: 45px;
   font-weight: bold;
-  font-size: 14px;
-  cursor: default;
-  color: black;
-  margin-bottom: 7px;
+  font-size: 11px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
 }

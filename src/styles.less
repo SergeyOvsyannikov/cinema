@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body{
   font-family: 'Roboto', sans-serif;
+  color: #8e8e8e;
+  background: #0c0c0c;
 }
 .application {
   position: relative;
@@ -32,5 +34,19 @@ body{
   }
   &._success{
     border-color: green;
+  }
+}
+
+.form-control {
+  display: block;
+  margin-top: 3px;
+  margin-bottom: 7px;
+  width: 260px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #c6c9d0;
+  &:focus{
+    border-bottom: 2px solid #007cc1;
+    outline-color: #c6c9d0;
   }
 }

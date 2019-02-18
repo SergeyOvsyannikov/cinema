@@ -1,21 +1,26 @@
-<div *ngIf=" userId|async; then thenBlock else elseBlock"></div>
-<ng-template #thenBlock>{{(currentUser|async).login}}</ng-template>
-<ng-template #elseBlock>
-  <form [formGroup]="reactiveForm" (submit)="onSubmit()" class="reg-form">
+
+<div class="login-container">
+  <form [formGroup]="reactiveForm" (submit)="onSubmit()" class="login-form">
+    <header class="login-form__header">
+      <h2>Вход</h2>
+    </header>
     <div class="form-group">
-      <label for="login">Username:</label>
-      <input type="text" id="login" formControlName="login" class="form-control">
+      <!--<label for="login">Username:</label>-->
+      <input type="text" id="login" formControlName="login" class="form-control" placeholder="Логин">
     </div>
     <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" formControlName="password" class="form-control">
+      <!--<label for="password">Password:</label>-->
+      <input type="password" id="password" formControlName="password" class="form-control" placeholder="Пароль">
     </div>
     <div class="control-panel">
-      <button type="submit" class="btn-default btn">Login</button>
-      <a href="/register">
-        <button type="button" class="btn-default btn">Register</button>
-      </a>
+      <button type="submit" class="btn-default btn">Войти</button>
     </div>
   </form>
-</ng-template>
+  <footer class="login-form__register">
+    <a href="/register" class="login-form__register-link">
+      Регистрация
+    </a>
+  </footer>
+</div>
+
 
