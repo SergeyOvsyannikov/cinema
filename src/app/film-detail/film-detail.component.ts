@@ -6,6 +6,7 @@ import {ActivatedRoute, Params} from '@angular/router';
 import {filmsSelectorById} from '../store/film/film.selector';
 import {AppState} from '../store/app-state';
 import {fetchFilmByIdAction} from '../store/film/film.action';
+import {Location} from '@angular/common';
 import {FilmModel} from '../models/film.model';
 
 @Component({
@@ -17,7 +18,11 @@ export class FilmDetailComponent implements OnInit {
 
   private objectId: string;
   constructor(private router: ActivatedRoute,
-              private ngRedux: NgRedux<AppState>) {
+              private ngRedux: NgRedux<AppState>,
+              private location: Location) {
+  }
+  goBack() {
+    this.location.back();
   }
   getFilmById() {
     return this.ngRedux.select((state) => filmsSelectorById(state, this.objectId));

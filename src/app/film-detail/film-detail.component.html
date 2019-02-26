@@ -1,3 +1,4 @@
+<div class="button-back" (click)="goBack()">Назад</div>
 <div *ngIf="getFilmById(objectId)|async as film" class="film-detail">
   <img [src]="film.imageUrl" alt="" class="film-detail__image">
   <div class="film-detail__film-text">

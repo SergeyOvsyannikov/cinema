@@ -11,6 +11,9 @@ export interface FilmsListState extends GenerationType<typeof INITIAL_STATE> {
 
 export const filmListReducer: Reducer = (state = INITIAL_STATE, action: AllFilmsType) => {
   switch (action.type) {
+    case FilmActionEnum.CLEAR_FILM_LIST: {
+      return state = {objectIds: []};
+    }
     case FilmActionEnum.FETCH_FILM_LIST_SUCCESS: {
       const {films} = action.payload;
       return {...state, objectIds: [...state.objectIds, ...films.map((f) => f.objectId)]};

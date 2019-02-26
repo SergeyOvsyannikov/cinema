@@ -24,6 +24,7 @@ export class LoginFormComponent implements OnInit {
   @select(currentUserSelectorObjectId) userId: Observable<string>;
   @select(currentUserSelector) currentUser: Observable<UserModel>;
   @select(notificationSelectorVisible) notifVisible: Observable<boolean>;
+
   constructor(private fb: FormBuilder,
               private ngRedux: NgRedux<AppState>,
               private uAuth: UserAuthService) {
@@ -53,11 +54,18 @@ export class LoginFormComponent implements OnInit {
       password: [null]
     });
   }
+
   toggleFormVisible() {
     LoginFormVisible.toggleVisible();
   }
+
   ngOnInit() {
     this.initForm();
+    this.currentUser.subscribe(val => {
+      if (val.objectId) {
+        this.toggleFormVisible();
+      }
+    });
   }
 
 }

@@ -2,7 +2,7 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
 
 import {NgRedux, select} from '@angular-redux/store';
 import {AppState} from '../store/app-state';
-import {fetchFilmListAction} from '../store/film/film.action';
+import {clearFilmListAction, fetchFilmListAction} from '../store/film/film.action';
 import {filmListSelectorObjectIds} from '../store/film-list/film-list.selector';
 import {Observable} from 'rxjs';
 import {filmsSelectorById} from '../store/film/film.selector';
@@ -25,6 +25,7 @@ export class FilmListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ngRedux.dispatch(clearFilmListAction());
     this.ngRedux.dispatch(fetchFilmListAction());
   }
 

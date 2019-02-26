@@ -3,12 +3,17 @@ import {FilmModel} from '../../models/film.model';
 
 
 export enum FilmActionEnum {
+  CLEAR_FILM_LIST = 'clear film list',
   FETCH_FILM_LIST = 'fetch film list',
   FETCH_FILM_LIST_SUCCESS = 'fetch film list success',
   FETCH_FILM_LIST_FAILURE = 'fetch film list failure',
   FETCH_FILM_BY_ID = 'fetch film by id ',
   FETCH_FILM_BY_ID_SUCCESS = 'fetch film by id success',
   FETCH_FILM_BY_ID_FAILURE = 'fetch film by id failure'
+}
+export type ClearFilmListActionType = AppAction<FilmActionEnum.CLEAR_FILM_LIST, ActionType<typeof clearFilmListAction>>;
+export function clearFilmListAction() {
+  return {type: FilmActionEnum.CLEAR_FILM_LIST};
 }
 
 export type FetchFilmListActionType = AppAction<FilmActionEnum.FETCH_FILM_LIST, ActionType<typeof fetchFilmListAction>>;
@@ -53,5 +58,6 @@ export type AllFilmsType =
   | FetchFilmListActionFailureType
   | FetchFilmByIdActionType
   | FetchFilmByIdSuccesActionType
-  | FetchFilmByIdFailureActionType;
+  | FetchFilmByIdFailureActionType
+  | ClearFilmListActionType;
 
